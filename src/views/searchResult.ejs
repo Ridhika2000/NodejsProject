@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management System</title>
+    <%- include("./partials/imports")-%>
+  </head>
+  <body>
+    <%- include("./partials/header")-%> <% const title="Add"%>
+
+    <div class="container-fluid">
+      <%- include("./partials/message",{msg:message}); -%>
+      <div class="row pt-2">
+        <div class="col">
+          <a href="/" class="fw-semibold p-3">Back</a>
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-md-7 m-auto con">
+          <form action="/searchResult" method="post">
+            <div class="row pt-5">
+              <label class="fw-bold ps-4 fs-5">Find Result</label>
+            </div>
+            <div class="row form-group py-2">
+              <div class="col-md-2">
+                <label for="rollNo" class="fs-6 p-1">Roll No.</label>
+              </div>
+              <div class="col-md-6">
+                <input
+                  class="form-control"
+                  type="number"
+                  name="rollNo"
+                  min="1"
+                  placeholder="Enter Roll No."
+                  required
+                />
+              </div>
+            </div>
+            <div class="row form-group py-2">
+              <div class="col-md-2">
+                <label for="name" class="fs-6 p-1">Date of Birth</label>
+              </div>
+              <div class="col-md-6">
+                <input
+                  class="form-control"
+                  type="date"
+                  name="dob"
+                  placeholder="Enter Date of Birth"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row py-4">
+              <div class="col-5 text-end">
+                <button
+                  type="submit"
+                  class="btn m-1 bg-blue text-light rounded-4 border border-2 px-5 fw-semibold border-blue"
+                >
+                  Search
+                </button>
+              </div>
+              <div class="col-5">
+                <button
+                  class="btn m-1 bg-white border rounded-4 border-2 px-5 fw-semibold border-white"
+                  type="reset"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<% if(msg){ %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 m-auto p-2">
+          <div
+            class="alert p-2 alert-warning alert-dismissible border-2 d-flex justify-content-between align-items-center fade show"
+            role="alert"
+          >
+            <strong class="ms-4"><%=msg%></strong>
+            <button
+              type="button"
+              class="close btn btn-invisible"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>

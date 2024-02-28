@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management System</title>
+    <%- include("./partials/imports")-%>
+</head>
+<body>
+    <%- include("./partials/header")-%>
+    <div class="container-fluid">
+        <%- include("./partials/message",{msg:message}) -%>
+        <div class="row py-2">
+            <div class="col">
+                <a href="/studentRecords" class="fw-semibold p-3">Go Back</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <form class="m-auto p-2" action="/addResult" method="post">
+                    <div class="row">
+                        <label class="fw-bold ps-4 fs-5">Add Student Result</label>
+                    </div>
+                    <!-- Roll No. Input -->
+                    <div class="row form-group py-2">
+                        <div class="col-md-3">
+                            <label for="rollNo" class="fs-6 p-1">Roll No.</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input
+                                class="form-control"
+                                type="number"
+                                name="rollNo"
+                                min="1"
+                                placeholder="Enter Roll No."
+                                required
+                            />
+                        </div>
+                    </div>
+                    <!-- Name Input -->
+                    <div class="row form-group py-2">
+                        <div class="col-md-3">
+                            <label for="name" class="fs-6 p-1">Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="studentName"
+                                placeholder="Enter Name"
+                                pattern="[A-Za-z ]{1,32}"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <!-- Date of Birth Input -->
+                    <div class="row form-group py-2">
+                        <div class="col-md-3">
+                            <label for="date" class="fs-6 p-1">Date of Birth</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input
+                                class="form-control"
+                                type="date"
+                                name="dob"
+                                formControlName="dob"
+                                max="<%= new Date().toISOString().slice(0,10) %>"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <!-- Score Input -->
+                    <div class="row form-group py-2">
+                        <div class="col-md-3">
+                            <label for="score" class="fs-6 p-1">Score</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input
+                                class="form-control"
+                                type="number"
+                                name="score"
+                                min="0"
+                                max="100"
+                                placeholder="Enter Score"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <!-- Submit and Clear Buttons -->
+                    <div class="row py-4">
+                        <div class="col-6 text-end">
+                            <button
+                                class="btn m-1 bg-blue text-light rounded-4 border border-2 px-5 fw-semibold border-blue"
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button
+                                type="reset"
+                                class="btn m-1 bg-white border rounded-4 border-2 px-5 fw-semibold border-white"
+                            >
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

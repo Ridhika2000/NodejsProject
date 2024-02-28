@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management System</title>
+    <%- include('./partials/imports') -%>
+  </head>
+  <body>
+    <%- include('./partials/header') -%>
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="col-md-7 m-auto d-flex justify-content-center align-items-center con"
+        >
+          <div class="buttons w-100">
+            <div class="text-center fw-bold fs-5 p-4">Login As</div>
+            <div
+              class="text-center m-auto w-50 d-flex align-items-center flex-wrap justify-content-around"
+            >
+              <a
+                class="btn btn-lg m-1 bg-blue text-light border border-2 px-4 fw-semibold border-blue"
+                href="/login/teacher"
+              >
+                Teacher
+              </a>
+              <a
+                class="btn btn-lg m-1 bg-blue text-light border border-2 px-4 fw-semibold border-blue"
+                href="/login/student"
+              >
+                Student
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

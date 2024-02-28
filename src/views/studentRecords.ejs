@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Management System</title>
+    <%- include('./partials/imports') -%>
+    <style>
+      body {
+        background-color: #f5f5f5; 
+        font-family: 'Arial', sans-serif; 
+      }
+
+      .container-fluid {
+        margin-top: 20px; 
+      }
+
+      .py-2 {
+        display: flex;
+        align-items: center;
+      }
+
+      .fw-semibold {
+        font-weight: bold;
+      }
+
+      .btn-add-record {
+        background-color: #008CFF;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        text-decoration: none;
+      }
+
+      .btn-add-record:hover {
+        background-color: #007BDC; 
+      }
+
+      .tableCol {
+        width: 20%;
+      }
+
+      .imgS {
+        width: 23px;
+        height: 23px;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/header')-%> <% const students = data %>
+
+    <div class="container-fluid">
+      <div class="row py-2">
+        <div class="col-6 text-center">
+          <label class="fw-semibold fs-5">
+            Total <%= students.length %> Students
+          </label>
+        </div>
+        <div class="col-6 text-end">
+          <a
+            class="btn btn-md bg-blue px-4 fw-semibold rounded-3 border border-2 text-light border-blue btn-add-record"
+            href="/add"
+          >
+            Add Record
+          </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-9 m-auto recordLength">
+          <table class="table text-center table-responsive text-nowrap">
+            <thead>
+              <tr>
+                <th scope="col" class="tableCol">Roll No.</th>
+                <th scope="col" class="tableCol">Name</th>
+                <th scope="col" class="tableCol">Date of Birth</th>
+                <th scope="col" class="tableCol">Score</th>
+                <th scope="col" class="tableCol">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% students.forEach((student) => { %>
+                <tr>
+                  <td><%= student.rollNo %></td>
+                  <td><%= student.studentName %></td>
+                  <td><%= student.dob.slice(0, 10) %></td>
+                  <td><%= student.score %></td>
+                  <td>
+                    <div class="action-buttons">
+                      <a href="./edit?id=<%= student.studentId %>" class="btn">
+                        <img src="https://img.icons8.com/ios/50/000000/edit--v1.png" class="imgS" />
+                      </a>
+                      <a href="./deleteResult?id=<%= student.studentId %>" class="btn">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" class="imgS" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

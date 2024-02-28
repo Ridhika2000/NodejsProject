@@ -1,0 +1,91 @@
+/* Backgrounds */
+.bg-light-green {
+    background-color: #D5E8D4 !important;
+}
+
+.bg-blue {
+    background-color: #008CFF !important;
+}
+
+.bg-yellow {
+    background-color: #FFE6CC !important;
+}
+
+.bg-white {
+    background-color: #F5F5F5 !important;
+}
+
+/* Text Colors */
+.text-light-green {
+    color: #D5E8D4 !important;
+}
+
+.text-light-green1 {
+    color: #AFCFA0 !important;
+}
+
+/* Borders */
+.border-light-green {
+    border-color: #AFCFA0 !important;
+}
+
+.border-blue {
+    border-color: #4F82AC !important;
+}
+
+.border-yellow {
+    border-color: #D8BE62 !important;
+}
+
+.border-white {
+    border-color: #E8E8E8 !important;
+}
+
+/* Font */
+.fw-semi-bold {
+    font-weight: 400 !important;
+}
+
+/* Table Styles */
+table,
+td,
+th,
+tr {
+    border: 1.6px solid black !important;
+}
+
+td {
+    padding: 0.5%;
+}
+
+/* Dimensions */
+.recordLength {
+    overflow-x: auto;
+    height: 78vh;
+}
+
+.tableCol {
+    width: 20%;
+}
+
+.imgS {
+    width: 23px;
+    height: 23px;
+}
+
+/* Container */
+.con {
+    min-height: 80vh;
+}
+
+/* Paginator */
+mat-paginator {
+    /* background-color: transparent; */
+    color: black; /* Note the semicolon here */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
